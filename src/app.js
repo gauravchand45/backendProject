@@ -18,7 +18,19 @@ app.use(express.static("Public"))
 app.use(cookieParser())
 
 import userRouter from "./Routes/user.routes.js";
+import videoRouter from "./Routes/video.routes.js"
+import subscriptionRouter from "./Routes/subscription.routes.js"
+import commentRouter from "./Routes/comment.routes.js"
+import playlistRouter from "./Routes/playlist.routes.js"
+import likeRouter from "./Routes/like.routes.js"
+import tweetRouter from "./Routes/tweet.routes.js"
 
 app.use("/api/v1/users",userRouter)
+app.use("/api/v1/videos",videoRouter)
+app.use("/api/v1/subscriptions",subscriptionRouter)
+app.use("/api/v1/comments",commentRouter)
+app.use("/api/v1/playlists",playlistRouter)
+app.use("/api/v1/likes",likeRouter)
+app.use("/api/v1/tweets",tweetRouter)
 
 export  {app}
